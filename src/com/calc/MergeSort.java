@@ -75,5 +75,7 @@ public class MergeSort {
 			System.out.print(data[i] + "\t");
 		}
 		System.out.println();
+		
+		
 	}
 }
