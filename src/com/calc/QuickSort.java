@@ -1,5 +1,10 @@
 package com.calc;
 
+/**
+ * 快速排序
+ * @author yest
+ *
+ */
 public class QuickSort {
 
 	/**
@@ -28,7 +33,6 @@ public class QuickSort {
 	private static int adjust(int[] o, int low, int hight) {// 选定枢轴为low所对应的值
 		int pivote = o[low];
 		System.out.println("初始-------");
-		printArr(o);
 		while (low < hight) {
 			while (low < hight  && pivote  <= o[hight]) {// 高位找到比povite大，则符合要求，继续寻找
 				hight--;
@@ -39,11 +43,9 @@ public class QuickSort {
 			}
 			o[hight] = o[low];
 			
-			printArr(o);
 		}
 		o[low] = pivote;
 		System.out.println("一轮结束");
-		printArr(o);
 		return low;
 	}
 
@@ -57,25 +59,6 @@ public class QuickSort {
 			System.out.print(ii + " ");
 		}
 	}
-	/**
-	 * 
-	 * @param num1
-	 *            减数
-	 * @param num2
-	 *            被减数
-	 * @return
-	 */
-	private static int compare(int num1, int num2) {
-		return num1 - num2;
-	}
 
 	
-	
-	
-	public  static void printArr(int[] o){
-		for(int i :o){
-			System.out.print(i+"  ");
-		}
-		System.out.println();
-	}
 }

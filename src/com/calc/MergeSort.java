@@ -1,5 +1,10 @@
 package com.calc;
 
+/**
+ * 归并排序
+ * @author yest
+ *
+ */
 public class MergeSort {
 
 	public static void main(String[] args) {
