@@ -17,7 +17,6 @@ public class TimeHander implements InvocationHandler {
             throws Throwable {
         long start = System.currentTimeMillis();
         System.out.println("start:"+start);
-        System.out.println(proxy.getClass().getName());
         method.invoke(object, args);
         Thread.sleep((int)(Math.random()*2000));
         long end = System.currentTimeMillis();

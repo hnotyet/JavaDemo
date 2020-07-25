@@ -20,7 +20,7 @@ public class CountDownLatchDemo {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 对于每位运动员，CountDownLatch减1后即结束比赛
+		// 对于每位运动员，CountDownLatch减1后即比赛开始
 		CountDownLatch begin = new CountDownLatch(1);
 		// 对于整个比赛，所有运动员结束后才算结束
 		CountDownLatch end = new CountDownLatch(PLAYER_AMOUNT);

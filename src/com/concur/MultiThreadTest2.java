@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author 百恼| 2012-07-26
  *
  */
-public class TestMultiThread  implements Runnable{
+public class MultiThreadTest2 implements Runnable{
 
 	private static int i;
 	
@@ -48,8 +48,8 @@ public class TestMultiThread  implements Runnable{
 	}
 	
 	public static void main(String[] args) throws InterruptedException{
-		TestMultiThread t1 = new TestMultiThread();
-		TestMultiThread t2 = new TestMultiThread();
+		MultiThreadTest2 t1 = new MultiThreadTest2();
+		MultiThreadTest2 t2 = new MultiThreadTest2();
 		ExecutorService exec1 = Executors.newCachedThreadPool();
 		ExecutorService exec2 = Executors.newCachedThreadPool();
 		exec1.execute(t1);
