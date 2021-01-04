@@ -3,6 +3,7 @@ package com.trafficlimit;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author: yest
@@ -24,6 +25,7 @@ public class TokenBucketTest {
     //目前token个数
     private volatile AtomicInteger curCount = new AtomicInteger(0);
 
+//    private ReentrantLock lock = new ReentrantLock();
     private ScheduledThreadPoolExecutor scheduledCheck = new ScheduledThreadPoolExecutor(1);
 
 
@@ -42,6 +44,7 @@ public class TokenBucketTest {
 
     private void put() {
       System.out.println(Thread.currentThread().getName() + "====== put之前的数量：" + curCount.get());
+
       synchronized (curCount) {
         if (curCount.get() < capacity) {
           System.out.println("目前数量==" + curCount.get() + ", 我还可以继续放");

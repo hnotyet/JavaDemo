@@ -17,13 +17,13 @@ public class RegTest {
 
     String content = "给这些邮箱做个加密，yest@163.com，ystttkl@163.com处理一下,还有ysttkl@ya-ho.com";
 
-    Pattern pattern = Pattern.compile("[a-zA-Z_]+@(\\w|-)+\\.{1}[a-zA-Z_]+");
+    Pattern pattern = Pattern.compile("[a-zA-Z_]+@(\\w|-)+\\.[a-zA-Z_]+");
 
     Matcher matcher = pattern.matcher(content);
 
     System.out.println(matcher.find());
 
-    System.out.println(matcher.group(1));
+    System.out.println(matcher.group(0));
 
     System.out.println(matcher.replaceAll("****"));
 

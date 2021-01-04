@@ -7,5 +7,4 @@ public class Car implements IProduct {
 		System.out.println("i am car");
 	}
 	
-	
 }

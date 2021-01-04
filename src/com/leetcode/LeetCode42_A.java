@@ -3,7 +3,7 @@ package com.leetcode;
 /**
  * @author :yest
  * @copyright: taofen8
- * @date: 2020/7/23
+ * @date: 2020/7/23 接雨水
  */
 public class LeetCode42_A {
 
