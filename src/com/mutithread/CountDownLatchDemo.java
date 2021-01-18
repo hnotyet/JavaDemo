@@ -1,4 +1,4 @@
-package com.concur;
+package com.mutithread;
 
 /**
  CountDownLatch类是一个同步计数器,构造时传入int参数,该参数就是计数器的初始值，每调用一次countDown()方法，计数器减1,计数器大于0 时，await()方法会阻塞程序继续执行

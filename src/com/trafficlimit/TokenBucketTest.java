@@ -33,12 +33,14 @@ public class TokenBucketTest {
       this.capacity = capacity;
       this.rateCount = rateCount;
 
-      scheduledCheck.scheduleAtFixedRate(new Runnable() {
+      Runnable runnable = new Runnable() {
         @Override
         public void run() {
           put();
         }
-      }, 0, 1, TimeUnit.SECONDS);
+      };
+
+      scheduledCheck.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.SECONDS);
 
     }
 

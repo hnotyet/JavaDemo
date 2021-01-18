@@ -1,7 +1,6 @@
-package com.concur;
+package com.mutithread;
 
-import com.concur.RedGreenLightTest.TrafficLight.Color;
-import java.util.concurrent.locks.Lock;
+import com.mutithread.RedGreenLightTest.TrafficLight.Color;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
