@@ -45,7 +45,6 @@ public class RedGreenLightTest {
 
             }
           }
-
         }
     }
   }
@@ -61,5 +60,6 @@ public class RedGreenLightTest {
       GREEN
     }
   }
+
 
 }

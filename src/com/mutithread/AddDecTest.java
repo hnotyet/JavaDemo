@@ -10,7 +10,6 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class AddDecTest {
 
-
   public static void main(String[] args) {
 
     Parameter parameter = new Parameter();
@@ -20,12 +19,12 @@ public class AddDecTest {
       public void run() {
         for (int i = 0; i < 100; i++) {
           try {
-            parameter.lock.lock();
+            parameter.lock();
 
             parameter.count++;
             System.out.println(parameter.count);
           } finally {
-            parameter.lock.unlock();
+            parameter.unlock();
           }
         }
       }
@@ -36,12 +35,12 @@ public class AddDecTest {
       public void run() {
         for (int i = 0; i < 100; i++) {
           try {
-            parameter.lock.lock();
+            parameter.lock();
 
             parameter.count--;
             System.out.println(parameter.count);
           } finally {
-            parameter.lock.unlock();
+            parameter.unlock();
           }
         }
 
@@ -64,7 +63,15 @@ public class AddDecTest {
   static class Parameter {
 
     volatile int count = 0;
-    Lock lock = new ReentrantLock();
+    private Lock lock = new ReentrantLock();
+
+    public void lock(){
+      lock.lock();
+    }
+
+    public void unlock(){
+      lock.unlock();
+    }
   }
 
   static class WrapperThread extends Thread {
