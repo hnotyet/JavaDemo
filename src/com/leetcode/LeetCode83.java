@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import com.leetcode.LeetCode21.ListNode;
+import com.leetcode.LeetCode21_合并2个有序链表.ListNode;
 
 /**
  * @author :yest

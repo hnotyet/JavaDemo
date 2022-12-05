@@ -188,16 +188,25 @@
     </resources>
   </build>
 
-  <repositories>
-    <repository>
-      <id>taofen8.repo</id>
-      <url>http://mvn.taofen8.com/artifactory/repo</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
-
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>taofen8.repo</id>-->
+<!--      <url>http://mvn.taofen8.com/artifactory/repo</url>-->
+<!--      <snapshots>-->
+<!--        <enabled>true</enabled>-->
+<!--        <updatePolicy>always</updatePolicy>-->
+<!--      </snapshots>-->
+<!--    </repository>-->
+<!--  </repositories>-->
+<!--  <distributionManagement>-->
+<!--    <snapshotRepository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </snapshotRepository>-->
+<!--    <repository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+<!--    </repository>-->
+<!--  </distributionManagement>-->
 
 </project>

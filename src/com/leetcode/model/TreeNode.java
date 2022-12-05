@@ -1,8 +1,6 @@
 package com.leetcode.model;
 
 
-import com.leetcode.LeetCode101;
-
 /**
  * @author :yest
  * @copyright: taofen8

@@ -1,7 +1,5 @@
 package com.leetcode;
 
-import com.leetcode.LeetCode21.Solution;
-
 /**
  * @author :yest
  * @copyright: taofen8

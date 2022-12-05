@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import com.leetcode.LeetCode101.TreeNode;
+import com.leetcode.LeetCode101_对称二叉树.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
