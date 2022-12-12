@@ -1,86 +1,69 @@
 package com.calc;
 
-/**
- * 归并排序
- * @author yest
- *
- */
+import java.util.Arrays;
+
 public class MergeSort {
-
-	public static void main(String[] args) {
-		int[] data = new int[] { 5, 3, 6, 2, 1, 9, 4, 8, 7 };
-		print(data);
-		
-		sort(data, 0, data.length - 1);
-		
-		System.out.println("排序后的数组：");
-		print(data);
-	}
-
-
-	public static void sort(int[] data, int left, int right) {
-		if (left >= right)
+	
+	public static void mergeSort(int[] arr) {
+		if (arr == null || arr.length == 0) {
 			return;
-		// 找出中间索引
-		int center = (left + right) / 2;
-		// 对左边数组进行递归
-		sort(data, left, center);
-		// 对右边数组进行递归
-		sort(data, center + 1, right);
-		// 合并
-		merge(data, left, center, right);
-		print(data);
+		}
+		int l = 0;
+		int r = arr.length-1;
+		
+		sort(arr,l,r);
+	}
+	
+	
+	public static void sort(int[] arr,int l,int r) {
+
+		if (l>=r){return;}
+
+
+		int mid =  (l + r)/2;
+	
+		sort(arr,l,mid);
+		sort(arr,mid+1,r);
+		merge(arr,l,mid,r);	
 	}
 
-	/**
-	 * 将两个数组进行归并，归并前面2个数组已有序，归并后依然有序
-	 * 
-	 * @param data
-	 *            数组对象
-	 * @param left
-	 *            左数组的第一个元素的索引
-	 * @param center
-	 *            左数组的最后一个元素的索引，center+1是右数组第一个元素的索引
-	 * @param right
-	 *            右数组最后一个元素的索引
-	 */
-	public static void merge(int[] data, int left, int center, int right) {
-		// 临时数组
-		int[] tmpArr = new int[data.length];
-		// 右数组第一个元素索引
-		int mid = center + 1;
-		// third 记录临时数组的索引
-		int third = left;
-		// 缓存左数组第一个元素的索引
-		int tmp = left;
-		while (left <= center && mid <= right) {
-			// 从两个数组中取出最小的放入临时数组
-			if (data[left] <= data[mid]) {
-				tmpArr[third++] = data[left++];
-			} else {
-				tmpArr[third++] = data[mid++];
+	
+	public static void merge(int[] arr,int l ,int mid,int r) {
+		int[] temp = new int[arr.length];
+		
+		int p1 = l;
+		int p2 = mid+1 ;
+		int p3 = r;
+		
+		int left =l ;
+	
+		while(p1 <= mid && p2 <= p3) {
+			if(arr[p1] > arr[p2]) {
+				temp[left++]= arr[p2++];
+			}else {
+				temp[left++] = arr[p1++];
 			}
 		}
-		// 剩余部分依次放入临时数组（实际上两个while只会执行其中一个）
-		while (mid <= right) {
-			tmpArr[third++] = data[mid++];
+		
+		while(p1 <= mid) {
+			temp[left++] = arr[p1++];
 		}
-		while (left <= center) {
-			tmpArr[third++] = data[left++];
+		
+		while(p2 <= p3) {
+			temp[left++] = arr[p2++];
 		}
-		// 将临时数组中的内容拷贝回原数组中
-		// （原left-right范围的内容被复制回原数组）
-		while (tmp <= right) {
-			data[tmp] = tmpArr[tmp++];
-		}
-	}
 
-	public static void print(int[] data) {
-		for (int i = 0; i < data.length; i++) {
-			System.out.print(data[i] + "\t");
+		while(l <= r) {
+			arr[l] =temp[l++];
 		}
-		System.out.println();
 		
-		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		int[] arr = { 3, 5, 7, 90, 4, 2, 1, 3, 4, 5, 7, 8, 9 };
+		mergeSort(arr);
+		System.out.print(Arrays.toString(arr));
 	}
 }
