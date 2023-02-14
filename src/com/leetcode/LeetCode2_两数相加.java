@@ -1,11 +1,9 @@
 package com.leetcode;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class LeetCode2 {
+public class LeetCode2_两数相加 {
 
     public int uniquePaths(int m, int n) {
         Set<String> res = new HashSet<>();

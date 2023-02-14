@@ -21,7 +21,7 @@ public class LeetCode11_盛最多水的容器 {
                 max =  Math.max(max,height[i] * (j-i));
                 i++;
             }else{
-                max =  Math.max(max,height[i] * (j-i));
+                max =  Math.max(max,height[j] * (j-i));
                 j--;
             }
 
