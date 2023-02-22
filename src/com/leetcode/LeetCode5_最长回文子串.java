@@ -5,7 +5,7 @@ package com.leetcode;
  * @copyright: taofen8
  * @date: 2020/7/23 最长回文字串
  */
-public class LeetCode5_最长回文字串 {
+public class LeetCode5_最长回文子串 {
 
     public static void main(String[] args) {
         System.out.println(longestPalindrome("cbbd"));
