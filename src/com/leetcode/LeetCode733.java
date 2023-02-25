@@ -2,7 +2,7 @@ package com.leetcode;
 
 public class LeetCode733 {
 
-    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+    public int[][] floodFill2(int[][] image, int sr, int sc, int newColor) {
         if(image != null || image.length == 0){
             return image;
         }
